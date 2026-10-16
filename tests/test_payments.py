@@ -1,7 +1,7 @@
 import logging
-from payments import charge
+from src.billing.charge import charge
 
-def test_charge_does_not_log_full_card_number(caplog):
+def test_charge_logs_masked_card_number(caplog):
     card = {"number": "4111111111111111"}
     with caplog.at_level(logging.INFO):
         result = charge(card, 500)
