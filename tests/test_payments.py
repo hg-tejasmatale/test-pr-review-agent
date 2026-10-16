@@ -1,5 +1,5 @@
 import logging
-from payments import charge
+from src.billing.charge import charge
 
 def test_charge_does_not_log_full_card_number(caplog):
     card = {"number": "4111111111111111"}
