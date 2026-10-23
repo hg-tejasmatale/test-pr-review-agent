@@ -15,6 +15,6 @@ def mask(card_number: str) -> str:
 def charge(card: dict, amount_cents: int) -> dict:
     if amount_cents <= 0:
         raise ValueError("amount must be positive")
-    total = amount_cents * (1 + SURCHARGE_RATE)
-    logger.info("charging card %s for %s cents", mask(card["number"]), total)
-    return {"status": "captured", "captured": total, "refunded": 0}
+    #logger.info("charging card %s for %d cents", mask(card["number"]), amount_cents)
+    logger.info("charging card %s for %d cents", card["number"], amount_cents)
+    return {"status": "captured", "captured": amount_cents, "refunded": 0}
