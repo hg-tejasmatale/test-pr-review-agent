@@ -4,6 +4,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+SURCHARGE_RATE = 0.025
+
 
 def mask(card_number: str) -> str:
     """Only the last four digits of a card number may appear in logs or responses."""
